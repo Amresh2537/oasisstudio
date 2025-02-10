@@ -457,6 +457,36 @@ iframe {
     color: white;
 }
 
+/* Existing styles remain the same */
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    .hero-section2 {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .video-container {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .stats-container {
+        width: 100%;
+    }
+
+    .stats-container h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+}
+
+
 
 .kitchen-section {
     background-color: #2b2a2a;
@@ -682,7 +712,7 @@ iframe {
     font-size: 16px;
     padding: 10px;
     background-color: #602a28;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .popular-searches {
