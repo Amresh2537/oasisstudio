@@ -20,8 +20,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 30px 40px;
+   
+    padding: 20px 20px 58px 20px;
     color: white;
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 .success {
-    color: green;
+    color:#a44945;
     background: #e8f5e9;
 }
 
@@ -54,7 +54,7 @@ body {
 }
 
 .content strong {
-    color: #FFD700;
+    color: #a44945;
 }
 
 .concerns-title {
@@ -82,6 +82,19 @@ body {
     max-width: 565px;
     width: 100%;
     text-align: center;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    object-fit: cover;
 }
 
 .form-container h2 {
@@ -131,7 +144,7 @@ textarea {
 
 
 button {
-    background: #FFD700;
+    background: #a44945;
     color: black;
     padding: 10px;
     border: none;
@@ -142,7 +155,17 @@ button {
 }
 
 button:hover {
-    background: #ffcc00;
+    background: #a44945;
+}
+
+.hero-section2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgb(4 4 4 / 70%), rgb(6 6 6 / 70%)), url(../wardrobe/6.png) center / cover no-repeat;
+    
+    min-height: 110vh;
+    position: relative;
 }
 
 /* Media Queries */
@@ -174,6 +197,17 @@ button:hover {
     }
 }
 
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
 
 .whatsapp {
     position: fixed;
@@ -188,7 +222,7 @@ button:hover {
 .logo-container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 15px;
+    padding: 15px 65px;
     background-color: #110000;
 }
 
@@ -227,37 +261,53 @@ button:hover {
     color: #007bff;
 }
 
-.hero-section {
 
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-        url('../images/hero-bg.jpg') center/cover;
-}
+
 
 .card-container {
-
     margin: auto;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
+    max-width: 1200px;
 }
 
 .grid {
     display: flex;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    padding: 25px;
+    flex-direction: row;
     flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
     justify-content: center;
-    gap: 40px;
-    padding: 20px;
+}
+
+/* First row - 4 cards */
+.grid > .card:nth-child(-n+4) {
+    grid-row: 1;
+}
+
+/* Second row - 3 cards */
+.grid > .card:nth-child(n+5) {
+    grid-row: 2;
 }
 
 .card {
     background-color: #111;
     color: white;
-    width: 280px;
-    min-height: 200px;
-    padding: 40px;
-    border-radius: 10px;
+    width: 220px;
+    min-height: 160px;
+    padding: 20px;
+    border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
 }
 
 .card:hover {
@@ -266,25 +316,28 @@ button:hover {
 }
 
 .icon {
-    color: #cddc39;
-    font-size: 40px;
+    color: #4CAF50; /* Theme green color - adjust to match exact shade */
+    font-size: 28px;
     margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
     .grid {
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .card {
-        width: 90%;
+        width: 85%;
+        margin: 10px 0;
     }
 }
 
 
+
 .featured-section-1 {
-    background-color: #7f8f0d;
+    background-color: #a44945;
     text-align: center;
     display: flex;
     padding: 30px;
@@ -332,10 +385,9 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('https://oasisstudio.co.in/wp-content/uploads/2025/01/Oasis-Studio-Modular-Kitchen-Speciality-1200x700.jpg') center/cover no-repeat;
+    background: rgba(31, 30, 30, 0.7);
 
-    padding: 50px;
+
     color: white;
 }
 
@@ -364,7 +416,7 @@ iframe {
 }
 
 .stats-container h1 span {
-    color: #B4DD1F;
+    color: #a44945;
 }
 
 .stats-grid {
@@ -377,14 +429,14 @@ iframe {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(12, 6, 6, 0.1);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
 }
 
 .stat .icon {
-    background: #B4DD1F;
+    background: #a44945;
     padding: 10px;
     border-radius: 10px;
 }
@@ -397,16 +449,19 @@ iframe {
 .stat h2 {
     font-size: 28px;
     margin: 10px 0;
+    color: white;
 }
 
 .stat p {
     font-size: 16px;
+    color: white;
 }
 
 
 .kitchen-section {
     background-color: #2b2a2a;
     text-align: center;
+    font-size: 20PX;
     padding: 30px 20px;
     color: white;
 }
@@ -418,12 +473,6 @@ iframe {
     color: white;
 }
 
-.kitchen-section-2 {
-    background-color: #111;
-    text-align: center;
-    padding: 30px 20px;
-    color: white;
-}
 
 .kitchen-section h2 {
     font-size: 24px;
@@ -438,12 +487,17 @@ iframe {
 }
 
 .kitchen-section h2 span {
-    color: #B4DD1F;
+    color: #a44945;
     font-weight: bold;
 }
 
 .kitchen-section-2 h2 span {
-    color: #B4DD1F;
+    color: #a44945;
+    font-weight: bold;
+}
+
+.kitchen-section-3 h2 span {
+    color: #a44945;
     font-weight: bold;
 }
 
@@ -532,7 +586,7 @@ iframe {
 }
 
 .highlight {
-    color: #cddc39;
+    color: #a44945;
     /* Yellow-green highlight */
 }
 
@@ -557,7 +611,7 @@ iframe {
 
 
 .top-bar {
-    background-color: #8a9200;
+    background-color:#a44945 ;
     color: white;
     padding: 10px;
     text-align: center;
@@ -627,7 +681,7 @@ iframe {
     display: none;
     font-size: 16px;
     padding: 10px;
-    background-color: #8a9200;
+    background-color: #602a28;
     color: black;
 }
 
@@ -672,3 +726,60 @@ iframe {
 .footer p {
     margin: 5px 0;
 }
+
+
+.kitchen-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.kitchen-slider .swiper-slide {
+    text-align: center;
+}
+
+.kitchen-slider .swiper-slide img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #333;
+}
+
+.swiper-pagination-bullet-active {
+    background: #333;
+}
+
+.kitchen-section-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #2b2a2a;
+    text-align: center;
+    font-size: 20PX;
+    padding: 20px 20px;
+    color: white;
+}
+
+.kitchen-slider {
+    width: 80%; /* Adjust this value as needed */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
