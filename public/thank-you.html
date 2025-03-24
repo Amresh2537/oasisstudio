@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-KKLVTWXP');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .thank-you-container { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; max-width: 600px; width: 90%; animation: slideUp 0.5s ease-out; }
+        .check-icon { width: 80px; height: 80px; background: #28a745; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: scaleUp 0.5s ease-out; }
+        .check-icon svg { width: 40px; height: 40px; fill: white; }
+        h1 { color: #333; font-size: 2.5em; margin-bottom: 15px; }
+        p { color: #666; font-size: 1.2em; line-height: 1.6; margin-bottom: 25px; }
+        .back-home { display: inline-block; padding: 12px 30px; background: #8B4513; color: white; text-decoration: none; border-radius: 25px; transition: transform 0.3s ease; }
+        .back-home:hover { transform: translateY(-3px); }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleUp { from { transform: scale(0); } to { transform: scale(1); } }
+        
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .thank-you-container { padding: 30px; width: 95%; }
+            h1 { font-size: 2em; }
+            p { font-size: 1.1em; }
+            .check-icon { width: 60px; height: 60px; }
+            .check-icon svg { width: 30px; height: 30px; }
+        }
+        @media screen and (max-width: 480px) {
+            .thank-you-container { padding: 20px; }
+            h1 { font-size: 1.8em; }
+            p { font-size: 1em; }
+            .back-home { padding: 10px 25px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKLVTWXP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <div class="thank-you-container">
+        <div class="check-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+        </div>
+        <h1 id="thankYouTitle">Thank You!</h1>
+        <p id="thankYouMessage">We've received your enquiry, and our team will reach out to you shortly to discuss your requirements.</p>
+        <p>Need quick assistance? Call us at +91 7071 259 259</p>
+        <p id="additionalMessage">Let's create your dream space with Oasis Studio!</p>
+        <a href="/" class="back-home">Back to Home</a>
+    </div>
+
+    <script>
+        // Function to determine which thank you message to display
+        function setThankYouContent() {
+            // Get the current URL path
+            const path = window.location.pathname;
+            
+            // Set content based on URL path
+            if (path === '/thank-you/getquote') {
+                document.getElementById('thankYouTitle').textContent = 'Quote Request Received!';
+                document.getElementById('thankYouMessage').textContent = 'Thank you for requesting a quote. Our team will prepare a detailed estimate for your project and contact you soon.';
+                document.getElementById('additionalMessage').textContent = 'We look forward to bringing your vision to life!';
+            } 
+            else if (path === '/thank-you/getintouch') {
+                document.getElementById('thankYouTitle').textContent = 'Thanks for Getting in Touch!';
+                document.getElementById('thankYouMessage').textContent = 'We appreciate you reaching out to us. A member of our team will contact you shortly.';
+                document.getElementById('additionalMessage').textContent = 'We are excited to connect with you!';
+            } 
+            else if (path === '/thank-you/enquirynow') {
+                document.getElementById('thankYouTitle').textContent = 'Thank You!';
+                document.getElementById('thankYouMessage').textContent = 'We’ve received your enquiry, and our team will reach out to you shortly to discuss your requirements.';
+                document.getElementById('additionalMessage').textContent = 'Thank you for your interest in Oasis Studio!';
+            }
+            // Default case is already set in the HTML
+        }
+        
+        // Run the function when the page loads
+        window.onload = setThankYouContent;
+    </script>
+</body>
+</html>
