@@ -45,12 +45,12 @@ body {
 .content {
     flex: 1;
     min-width: 300px;
-    padding: 20px;
+    padding: 0px;
 }
 
 .content h1 {
     font-size: clamp(24px, 4vw, 60px);
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .content strong {
@@ -181,7 +181,7 @@ button:hover {
     
     .content {
         min-width: 100%;
-        padding: 15px;
+        padding: 0px;
     }
     
     .form-container {
